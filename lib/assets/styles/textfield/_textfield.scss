@@ -1,0 +1,32 @@
+@import "../theme/theme";
+@import "../typography/variables";
+@import "../animation/mixins";
+
+@import "variables";
+@import "textfield.orig";
+
+.mdl-textfield {
+    width: auto;
+
+}
+
+// Styling for the input element.
+.mdl-textfield__input {
+
+    .mdl-textfield.is-disabled & {
+        color: $input-text-label-color;
+    }
+}
+
+.mdl-textfield__label {
+    &.mdl-textfield__label--icon-right {
+        // without Firefox wraps icon to next line
+        white-space: normal;
+
+        i {
+            float: right;
+            padding-right: 2px;
+            font-size: 21px;
+        }
+    }
+}

@@ -1,0 +1,24 @@
+@import "../theme/theme";
+@import "../animation/mixins";
+
+@import "variables";
+@import "functions";
+@import "checkbox.orig";
+
+//.mdl-checkbox {
+//    //@include avoid-blue-box-on-double-click();
+//}
+//
+//.mdl-checkbox__tick-outline {
+//    //mask: initial;
+//    mask: svg-tick-mask();
+//
+//    .mdl-checkbox.is-checked & {
+//        background: $checkbox-color svg-tick();
+//    }
+//
+//    .mdl-checkbox.is-checked.is-disabled & {
+//        background: $checkbox-disabled-color svg-tick();
+//    }
+//}
+

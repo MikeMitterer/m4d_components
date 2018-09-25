@@ -1,0 +1,191 @@
+//---
+// Copyright (c) 2016, Michael Mitterer (office@mikemitterer.at),
+// IT-Consulting and Development Limited.
+//
+// All Rights Reserved.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//    http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+//
+
+@import "../theme/theme";
+@import "../typography/variables";
+@import "../shadow/mixins";
+
+@import "variables";
+
+// mdl-snackbar was mainly taken from Angular-Material
+//  More: https://github.com/angular/material/blob/master/src/components/toast/toast.scss
+
+
+.mdl-snackbar-container {
+    &.is-visible {
+        //background-color: rgba(0, 0, 0, 0.25);
+        //visibility: visible;
+
+        .mdl-snackbar {
+            opacity    : 1;
+            transition : $snackbar-swift-ease-in;
+            //transform  : translate3d(0, 0, 0) scale(1.0);
+        }
+    }
+
+    &.is-hidden {
+        .mdl-snackbar {
+            // hidden
+            opacity    : 0;
+            transition     : $snackbar-swift-ease-out;
+            //transform      : translate3d(0, 100%, 0) scale(0.2);
+        }
+    }
+
+    .mdl-snackbar {
+        display: flex;
+        position:absolute;
+        box-sizing: border-box;
+        align-items: center;
+
+        min-height: 48px;
+        padding-left: 24px;
+        padding-right: 24px;
+
+        border-radius: 2px;
+        font-size: 14px;
+        cursor: default;
+
+        max-width: 879px;
+        max-height: 40px;
+
+        height: $snackbar-height;
+        z-index: $snackbar-z-index;
+
+        color: $snackbar-color;
+        background-color: $snackbar-background;
+
+        @include shadow-2dp();
+
+        &.mdl-capsule {
+            border-radius: 24px;
+        }
+
+        opacity: 1;
+        transform: translate3d(0,0,0) rotateZ(0deg);
+        transition: $snackbar-swift-ease-out;
+
+        &.ng-leave-active {
+            transition: $snackbar-swift-ease-in;
+        }
+
+        /* Transition differently when swiping */
+        &.mdl-swipeleft,
+        &.mdl-swiperight,
+        &.mdl-swipeup,
+        &.mdl-swipedown {
+            transition: $snackbar-swift-ease-out;
+        }
+
+        &.ng-enter {
+            transform: translate3d(0, 100%, 0);
+            &.mdl-top {
+                transform: translate3d(0, -100%, 0);
+            }
+            opacity: 0;
+            &.ng-enter-active {
+                transform: translate3d(0, 0, 0);
+                opacity: 1;
+            }
+        }
+        &.ng-leave.ng-leave-active {
+            opacity: 0;
+            transform: translate3d(0, 100%, 0);
+            &.mdl-snackbar--top {
+                transform: translate3d(0, -100%, 0);
+            }
+            &.mdl-swipeleft {
+                transform: translate3d(-100%, 0%, 0);
+            }
+            &.mdl-swiperight {
+                transform: translate3d(100%, 0%, 0);
+            }
+        }
+
+        .mdl-button {
+            color: $snackbar-button-color;
+        }
+
+        &.mdl-snackbar--left { left: 0; }
+
+        &.mdl-snackbar--top { top: 0; }
+
+        &.mdl-snackbar--right { right: 0; }
+
+        &.mdl-snackbar--bottom { bottom: 0; }
+
+        .mdl-snackbar__flex {
+            flex-grow: 1;
+        }
+    }
+}
+
+@media (max-width: $snackbar-layout-breakpoint-sm) {
+    .mdl-snackbar {
+        left: 0;
+        right: 0;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        border-radius: 0;
+        bottom: 0;
+        &.mdl-snackbar--top {
+            bottom: auto;
+            top: 0;
+        }
+    }
+}
+@media (min-width: $snackbar-layout-breakpoint-sm) {
+    .mdl-snackbar {
+        min-width: 288px;
+        &.mdl-snackbar--bottom {
+            bottom: $snackbar-margin;
+        }
+        &.mdl-snackbar--left {
+            left: $snackbar-margin;
+        }
+        &.mdl-snackbar--right {
+            right: $snackbar-margin;
+        }
+        &.mdl-snackbar--top {
+            top: $snackbar-margin;
+        }
+
+        /*
+         * When the snackbar doesn't take up the whole screen,
+         * make it rotate when the user swipes it away
+         */
+        &.ng-leave.ng-leave-active {
+            &.mdl-swipeleft {
+                transform: translate3d(-100%, 25%, 0) rotateZ(-15deg);
+            }
+            &.mdl-swiperight {
+                transform: translate3d(100%, 25%, 0) rotateZ(15deg);
+            }
+            &.mdl-snackbar--top {
+                &.mdl-swipeleft {
+                    transform: translate3d(-100%, 0, 0) rotateZ(-15deg);
+                }
+                &.mdl-swiperight {
+                    transform: translate3d(100%, 0, 0) rotateZ(15deg);
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,28 @@
+//----------------------------------------------------------------------------------------------------------------------
+// Material Design Lite
+//----------------------------------------------------------------------------------------------------------------------
+
+// Material Colors
+@import "theme/color-definitions.scss";
+
+// Color-Theme (default, defined in palette/_themes.scss)
+$theme-name: "indigo-pink" !default;
+$palette-primary: $palette-indigo !default;
+$palette-accent: $palette-pink !default;
+//$theme-name: "amber-brown";
+//$palette-primary: $palette-amber;
+//$palette-accent: $palette-brown; // All pallets except brown, grey and blue-grey
+
+// Config for this package
+@import "_config/config";
+@import "_config/show_config";
+
+// Resets and dependencies
+@import "resets/resets";
+
+// CSS-Styles for colors
+@import "theme/palette";
+
+// Components
+@import "components";
+

@@ -1,0 +1,206 @@
+//---
+// Copyright (c) 2016, Michael Mitterer (office@mikemitterer.at),
+// IT-Consulting and Development Limited.
+//
+// All Rights Reserved.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//    http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+//
+
+@import "../theme/theme";
+@import "../typography/variables";
+@import "../shadow/mixins";
+
+@import "variables";
+
+.mdl-nav-pill {
+    padding          : 4px 8px;
+    margin           : 0 0 $nav-pills-margin 0;
+    border-radius    : $nav-pills-border-radius;
+    color            : $nav-pills-color;
+    background-color : $nav-pills-background-color;
+
+    .debug & {
+        border : 1px dotted black;
+    }
+
+    &:last-child, &.is-last-child {
+        margin-bottom : 0;
+    }
+
+    &:hover {
+        //margin : -2px 2px ($nav-pills-margin + 2) -2px;
+        // Short form not possible, bug sassc???
+        margin-top    : -$nav-pills-move-on-hover;
+        margin-right  : $nav-pills-move-on-hover;
+        margin-bottom : ($nav-pills-margin + $nav-pills-move-on-hover);
+        margin-left   : -$nav-pills-move-on-hover;
+
+        &:last-child {
+            margin-bottom : $nav-pills-move-on-hover;
+        }
+        &.is-last-child {
+            margin-bottom : $nav-pills-margin + ($nav-pills-move-on-hover * 2);
+        }
+    }
+
+    @include shadow-2dp();
+
+    > a {
+        display: block;
+        text-decoration : none;
+        color           : $nav-pills-color;
+        font-weight     : normal;
+    }
+
+    &.mdl-nav-pill--dark {
+        background-color : nth($palette-primary, $nav-pills-base-color-index);
+    }
+
+    &.mdl-nav-pill--darker {
+        background-color : nth($palette-primary, $nav-pills-base-color-index + 2);
+    }
+
+    &.mdl-nav-pill--light {
+        background-color : nth($palette-primary, $nav-pills-base-color-index - 2);
+    }
+
+    &.mdl-nav-pill--lighter {
+        background-color : nth($palette-primary, $nav-pills-base-color-index - 4);
+    }
+
+    &.mdl-nav-pill--accent {
+        background-color : nth($palette-accent, $nav-pills-base-color-index);
+    }
+
+    &.mdl-nav-pill--light-text {
+        color : $nav-pills-light-color;
+        a {
+            color : $nav-pills-light-color;
+        }
+    }
+
+    transition       : all 0.1s linear;
+}
+
+.mdl-nav-pills {
+    padding         : 0;
+    margin          : 0;
+    box-sizing      : border-box;
+    display         : flex;
+    flex-direction  : column;
+    flex-wrap       : wrap;
+    justify-content : flex-start; // ↓
+    align-content   : space-between; // =
+    align-items     : flex-start; // ⇾
+
+    .debug & { border : 1px solid green; }
+
+    &.mdl-nav-pills--as-row {
+        display         : flex;
+        flex-direction  : row;
+        flex-wrap       : wrap;
+        justify-content : flex-start; // ⇾
+        align-content   : space-between; // ||
+        align-items     : flex-start; // ↓
+
+        > * {
+            margin : 0 $nav-pills-margin $nav-pills-margin 0;
+
+            &:last-child, &.is-last-child {
+                margin-right : 0;
+            }
+
+            &:hover {
+                //margin : -2px 2px ($nav-pills-margin + 2) -2px;
+                // Short form not possible, bug sassc???
+                margin-top    : -$nav-pills-move-on-hover;
+                margin-right  : ($nav-pills-margin + $nav-pills-move-on-hover);
+                margin-bottom : (0);
+                margin-left   : -$nav-pills-move-on-hover;
+
+                &:last-child, &.is-last-child {
+                    margin-right : $nav-pills-move-on-hover;
+                    //margin-bottom : $nav-pills-move-on-hover;
+                }
+
+            }
+        }
+    }
+
+    > * {
+        @extend .mdl-nav-pill;
+    }
+
+    & > li {
+        list-style : none;
+
+        //margin: $nav-pills-margin;
+        display    : block;
+    }
+
+    &.mdl-nav-pill--dark > * {
+        background-color : nth($palette-primary, $nav-pills-base-color-index);;
+    }
+    > .mdl-nav-pill--dark { // child gets priority
+        background-color : nth($palette-primary, $nav-pills-base-color-index) !important;
+    }
+
+    &.mdl-nav-pill--darker > * {
+        background-color : nth($palette-primary, $nav-pills-base-color-index + 2);
+    }
+    > .mdl-nav-pill--darker { // child gets priority
+        background-color : nth($palette-primary, $nav-pills-base-color-index + 2) !important;
+    }
+
+    &.mdl-nav-pill--light > * {
+        background-color : nth($palette-primary, $nav-pills-base-color-index - 2);
+    }
+
+    > .mdl-nav-pill--light { // child gets priority
+        background-color : nth($palette-primary, $nav-pills-base-color-index - 2) !important;
+    }
+
+    &.mdl-nav-pill--lighter > * {
+        background-color : nth($palette-primary, $nav-pills-base-color-index - 4);
+    }
+
+    > .mdl-nav-pill--lighter { // child gets priority
+        background-color : nth($palette-primary, $nav-pills-base-color-index - 4) !important;
+    }
+
+    &.mdl-nav-pill--accent > * {
+        background-color : nth($palette-accent, $nav-pills-base-color-index);
+    }
+
+    > .mdl-nav-pill--accent { // child gets priority
+        background-color : nth($palette-accent, $nav-pills-base-color-index) !important;
+    }
+
+    &.mdl-nav-pill--light-text > * {
+        color : $nav-pills-light-color;
+        a {
+            display: block;
+            color : $nav-pills-light-color;
+        }
+    }
+
+    > .mdl-nav-pill--light-text { // child gets priority
+        color : $nav-pills-light-color !important;;
+        a {
+            color : $nav-pills-light-color !important;;
+        }
+    }
+}
+
+

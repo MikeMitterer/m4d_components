@@ -1,0 +1,196 @@
+//---
+// Copyright (c) 2016, Michael Mitterer (office@mikemitterer.at),
+// IT-Consulting and Development Limited.
+//
+// All Rights Reserved.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//    http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+//
+
+//@import "../variables";
+@import "../theme/theme";
+@import "../typography/mixins";
+
+@import "variables";
+
+.mdl-notification-container {
+    z-index: $notification-container-z-index;
+    position: absolute;
+    right : 12px;
+    top: 12px;
+    //bottom: 12px;
+    min-width: $notification-container-width;
+    max-width: $notification-container-width;;
+    max-height: calc(100vh - 12px);
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start; // ↓
+    align-content: space-between; // =
+    align-items: center; // ⇾
+
+    overflow : scroll;
+
+    &.is-visible {
+        background-color: rgba(0, 0, 0, 0);
+        visibility: visible;
+
+        .mdl-notification {
+            // opacity    : 1;
+            &.animation.last-state {
+                opacity    : 1;
+            }
+        }
+    }
+
+    &.is-hidden {
+        .mdl-notification {
+        }
+    }
+
+    .mdl-notification {
+        &.animation.closed-state {
+            opacity    : 0;
+        }
+
+        position: relative;
+        box-sizing: border-box;
+        background-color: white;
+
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: flex-start; // ↓
+        align-content: space-between; // =
+        align-items: flex-start; // ⇾
+        flex-shrink: 0;  // min-height bug
+
+        opacity    : 0;
+        min-height: 48px;
+        min-width: $notification-width;
+        max-width: $notification-width;
+        width: $notification-width;
+
+        padding-left: 16px;
+        padding-right: 16px;
+        padding-top: 16px;
+        padding-bottom: 16px;
+
+        border: 1px solid #eaeaea;
+        border-radius: 2px;
+        font-size: 14px;
+        cursor: default;
+
+        margin-bottom: 12px;
+
+        h1,h2,h3,h4,h5,h6 { margin-top: 0; margin-bottom: 0; }
+
+        h1 { @include typo-headline($usePreferred: true); }
+        h2,h3,h4,h5,h6 { @include typo-subhead($colorContrast: true,$usePreferred: true) }
+
+        &.mdl-notification--debug {
+            .mdl-notification__avatar { color: $notification-color-debug;  &::before { content: "bug_report"; } }
+        }
+
+        &.mdl-notification--info {
+            .mdl-notification__avatar { color : $notification-color-info; &::before { content : "info"; } }
+        }
+
+        &.mdl-notification--warning {
+            .mdl-notification__avatar { color: $notification-color-warning; &::before { content: "warning"; } }
+        }
+
+        &.mdl-notification--error {
+            .mdl-notification__avatar { color: $notification-color-error; &::before { content: "error"; } }
+        }
+
+        .mdl-notification__close {
+            position: absolute;
+            top: 8px;
+            right: 12px;
+
+            font-size: 12px;
+        }
+
+        .mdl-notification__content {
+            font-size: 14px;
+            width: 100%;
+
+            overflow: hidden;
+            word-wrap: break-word;
+
+            .mdl-notification__title {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: flex-start; // ⇾
+                align-content: space-between; // ||
+                align-items: center; // ↓
+
+                .mdl-notification__avatar {
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    justify-content: center; // ⇾
+                    align-content: space-between; // ||
+                    align-items: center; // ↓
+
+                    font-size: 50px;
+
+                    min-width: 50px;
+                    max-width: 50px;
+                    min-height: 50px;
+                    max-height: 50px;
+                    // border: 1px solid blue;
+                    // border-radius: 25px;
+
+                    margin-right: 8px;
+                }
+
+                + .mdl-notification__text {
+                    margin-top: 16px;
+                }
+            }
+
+
+
+            .mdl-notification__text {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                justify-content: flex-start; // ⇾
+                align-content: space-between; // ||
+                align-items: center; // ↓
+
+                .mdl-notification__avatar {
+
+                    vertical-align: middle;
+                    font-size: 50px;
+                    margin-right: 12px;
+
+                    + span {
+                        max-width: $notification-width - 62px;
+
+                        // If not set - Chrome on Mac is not able to calculate the right size
+                        min-width: 1px;
+
+                        @include typo-body-1($usePreferred: true);
+                        line-height: 130%;
+                    }
+                }
+            }
+
+        }
+    }
+}

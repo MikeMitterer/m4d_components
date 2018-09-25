@@ -1,0 +1,43 @@
+//@import "../mixins/mixins";
+@import "../_config/config";
+
+
+@if variable-exists(theme-name) == false or
+    variable_exists(palette-primary) == false or
+    variable_exists(palette-accent) == false {
+
+    @error "Please define a color-theme in your main-css (material-design-lite.scss)"
+}
+
+$_show_config_info_for_mdl: 1 !default;
+@if $_show_config_info_for_mdl == 1 {
+
+/* Config - MaterialDesignLite
+------------------------------------------------------------------------------------------------------------------------
+
+    Package:               ($package-name)               #{$package-name}
+    Assets folder:         ($package-assets)             #{$package-assets}
+    CSS-Output depth:      ($package-css-output-depth)   #{$package-css-output-depth}
+
+    Functions:
+    ----------
+    package-docroot:       (package-docroot())                     #{package-docroot()}
+    package-root:          (package-root())                        #{package-root()}
+    package-assets:        (package-assets("upload/sample.svg"))   #{package-assets("upload/sample.svg")}
+
+    Fonts:
+    ----------
+    Location:              (package-root("assets/fonts"))          #{package-root("assets/fonts")}
+
+    Colors:
+    ----------
+    Theme:                  ($theme-name)                 #{$theme-name}
+    Primary palette:        ($palette-primary)            #{$palette-primary}
+    Accent palette:         ($palette-accent)             #{$palette-accent}
+
+--------------------------------------------------------------------------------------------------------------------- */
+//
+
+$_show_config_info_for_mdl: 0;
+}
+

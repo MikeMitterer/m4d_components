@@ -1,0 +1,96 @@
+//---
+// Copyright (c) 2016, Michael Mitterer (office@mikemitterer.at),
+// IT-Consulting and Development Limited.
+//
+// All Rights Reserved.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//    http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+//
+
+@import "../theme/theme";
+@import "variables";
+
+.mdl-bottom-bar {
+    box-sizing       : border-box;
+
+    display          : flex;
+    flex-direction   : row;
+    justify-content  : space-around;
+    align-items      : center;
+
+    height: $bottom-bar-height;
+    min-height: $bottom-bar-height;
+
+    //padding          : $padding;
+    color            : $bottom-bar-text-color;
+    background-color : $bottom-bar-bg-color;
+
+    width: 100%;
+
+    .mdl-bottom-bar--left-section {
+        display       : flex;
+        align-content : flex-start;
+        align-items   : center;
+        flex-grow     : 1;
+
+    }
+
+    .mdl-bottom-bar--right-section {
+        float         : none;
+        display       : flex;
+        align-content : flex-start;
+        align-items   : center;
+    }
+
+    .mdl-bottom-bar--link-list {
+        list-style : none;
+        margin     : 0;
+        padding    : 0;
+
+        a {
+            color           : inherit;
+            text-decoration : none;
+        }
+
+        li {
+            float         : left;
+            margin-bottom : 0;
+            margin-right  : $bottom-bar-padding;
+        }
+    }
+
+    .mdl-bottom-bar--btn {
+        display          : flex;
+        justify-content  : center;
+        align-items      : center;
+        width            : $bottom-bar-btn-size;
+        height           : $bottom-bar-btn-size;
+        border-radius    : 100%;
+        padding          : 0;
+
+        color            : $bottom-bar-btn-color;
+        background-color : $bottom-bar-text-color;
+        border           : none;
+
+        //&:last-child {
+        //    margin-right : 0;
+        //}
+    }
+
+}
+
+@media screen and (min-width : 760px) {
+    .mdl-bottom-bar--link-list {
+        clear : none;
+    }
+}

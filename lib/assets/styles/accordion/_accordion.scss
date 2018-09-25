@@ -1,0 +1,182 @@
+//---
+// Copyright (c) 2016, Michael Mitterer (office@mikemitterer.at),
+// IT-Consulting and Development Limited.
+//
+// All Rights Reserved.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//    http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+//
+
+//@import "../theme/color-definitions";
+//@import "../theme/theme";
+@import "../theme/theme";
+@import "variables";
+
+// MasterSample: http://codepen.io/MikeMitterer/pen/yyjKPd
+
+/* Accordion */
+mdl-accordion-group, mdl-accordion {
+    display: block;
+}
+
+mdl-accordion-group {
+    mdl-accordion:first-of-type {
+        .mdl-accordion {
+            border-top: 1px solid $accordion-divider-color;
+        }
+    }
+}
+/* Basic Accordion Styles */
+.mdl-accordion-group {
+
+    .mdl-accordion {
+        /* For Demo Positioning Only */
+        // width: 50%;
+        // margin: 20px;
+
+        input[name^='mdl-accordion'] {
+            display: none;
+        }
+
+        /* Labels */
+        .mdl-accordion__label {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+
+            height: $accordion-label-height;
+            padding-left: $accordion-padding;
+
+            position: relative;
+            //display: block;
+            border-bottom: 1px solid $accordion-divider-color;
+            //        font-size: 20px;
+            color: $accordion-text-color;
+            cursor: pointer;
+            font-size: $accordion-label-font-size;
+
+            transition: all $accordion-timing $accordion-ease;
+
+            .debug & { border: 1px solid red; }
+
+            &:hover {
+                color: $accordion-active-text-color;
+            }
+
+            .mdl-accordion__label--stretch, .stretch {
+                flex-grow: 1;
+                .debug & { border: 1px solid blue; }
+            }
+
+            .indicator, .indicator--right {
+                text-align: right;
+
+                //top: 12px;
+                //right: $accordion-padding;
+                transition : $accordion-timing ease-in-out;
+
+                font-weight: 100;
+                font-size: 18px;
+                color: $accordion-text-color;
+
+                .debug & { border: 1px solid green; }
+            }
+
+            .indicator:first-child {
+                margin-right: 12px;
+            }
+
+            .indicator--right, .right {
+                position: absolute;
+                top: 12px;
+                right: 0;  // right 0 but margin is already set for :first-child!
+
+            }
+
+            //.indicator {
+            //    position: absolute;
+            //    top: 12px;
+            //    right: $accordion-padding;
+            //    transition : $accordion-timing ease-in-out;
+            //
+            //    font-weight: 100;
+            //    font-size: 18px;
+            //    color: $accordion-text-color;
+            //
+            //    .debug & { border: 1px solid green; }
+            //}
+
+            .mdl-accordion__ripple-container {
+                display: block;
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                left: 0;
+                top: 0;
+                z-index: 1;
+                overflow: hidden;
+
+                // Turns off accidentally selecting this label
+                user-select: none;
+
+                & .mdl-ripple {
+                    background: $accordion-highlight-color;
+                }
+            }
+        }
+
+        input:checked + .mdl-accordion__label {
+            color: $accordion-active-text-color;
+
+            .indicator {
+                transform  : rotate(90deg);
+                transition : $accordion-timing ease-in-out;
+
+                color: $accordion-highlight-color;
+                .debug & { border: 1px solid red; }
+            }
+        }
+
+        /* Panel Content */
+        .mdl-accordion--content {
+            line-height: initial;
+            overflow: auto;
+            max-height: 0;
+
+            position: relative;
+            padding: 0 $accordion-padding;
+            transition: max-height $accordion-timing $accordion-ease;
+
+            .mdl-accordion--header {
+                padding: ($accordion-padding / 2) 0;
+                color: $accordion-header-color;
+                margin: 0;
+            }
+
+            .mdl-accordion--body {
+                padding: 0;
+                color: $accordion-text-color;
+                //font-size: .825em;
+                //line-height: 1.4em;
+            }
+        }
+    }
+}
+
+
+input[name^='mdl-accordion']:checked ~ .mdl-accordion--content {
+    max-height: 1500px;
+    border-bottom: 1px solid $accordion-divider-color;
+    transition: max-height $accordion-timing $accordion-ease;
+}
