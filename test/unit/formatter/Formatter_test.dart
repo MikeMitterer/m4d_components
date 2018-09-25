@@ -14,7 +14,7 @@ main() async {
     // final Logger _logger = new Logger("test.unit.formatter");
 
     final injector = ioc.IOCContainer.bindModules([ FormatterModule() ]);
-    final formatters = injector.resolve<Formatters>(service.Formatters); // equivalent to 'new Formatters();'
+    final formatters = injector.resolve(service.Formatters).as<Formatters>(); // equivalent to 'new Formatters();'
 
     group('Formatter', () {
         setUp(() {});

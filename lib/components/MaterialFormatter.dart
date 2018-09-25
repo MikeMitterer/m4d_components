@@ -86,7 +86,8 @@ class MaterialFormatter extends MdlComponent {
     FormatterPipeline get _pipeline {
         if(_lazyPipe == null) {
             final UnmodifiableListView<String> parts = _parts;
-            _lazyPipe = new FormatterPipeline.fromList(injector.resolve<Formatters>(service.Formatters),
+            _lazyPipe = new FormatterPipeline.fromList(
+                injector.resolve(service.Formatters).as<Formatters>(),
                 parts.getRange(0,parts.length));
         }
         return _lazyPipe;
