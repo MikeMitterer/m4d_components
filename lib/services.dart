@@ -35,4 +35,5 @@ library m4d_core.services;
 
 import 'package:m4d_core/m4d_ioc.dart';
 
+/// Service-ID for [Formatters]
 final Formatters = Service("m4d_formatter.Formatters",ServiceType.Instance);
