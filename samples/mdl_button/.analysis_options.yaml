@@ -1,0 +1,7 @@
+# Analyzer options:
+#   https://www.dartlang.org/guides/language/analysis-options
+#
+analyzer:
+  # strong-mode: true
+
+
