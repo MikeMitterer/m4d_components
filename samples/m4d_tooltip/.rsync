@@ -1,0 +1,15 @@
+# Rsync-Destination für dieses sample
+#
+#   - ssh ls2
+#   - cat ~/website/config/nginx/_template.conf.txt | sed -e 's/%example%/m4d_tooltip/' > ~/website/config/nginx/m4d_tooltip.conf
+#   - cat ~/website/config/nginx/m4d_tooltip.conf
+#   - sudo mkdir -p ~/website/data/example/m4d_tooltip
+#   - sudo chown ubuntu:ubuntu ~/website/data/example/m4d_tooltip
+#   - sudo chmod 775 ~/website/data/example/m4d_tooltip
+#   - echo 'm4d_tooltip' > ~/website/data/example/raspi4_cam/index.html
+#   - ls -lad ~/website/data/example/m4d_tooltip
+#   - cd ~/website && docker-compose restart
+#
+RSYNC_DESTINATION=":~/website/data/example/m4d_tooltip/"
+EXAMPLE_URL="http://m4d_tooltip.example.mikemitterer.at/"
+

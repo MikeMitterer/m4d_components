@@ -1,0 +1,15 @@
+# Rsync-Destination für dieses sample
+#
+#   - ssh ls2
+#   - cat ~/website/config/nginx/_template.conf.txt | sed -e 's/%example%/m4d_textfield/' > ~/website/config/nginx/m4d_textfield.conf
+#   - cat ~/website/config/nginx/m4d_textfield.conf
+#   - sudo mkdir -p ~/website/data/example/m4d_textfield
+#   - sudo chown ubuntu:ubuntu ~/website/data/example/m4d_textfield
+#   - sudo chmod 775 ~/website/data/example/m4d_textfield
+#   - echo 'm4d_textfield' > ~/website/data/example/raspi4_cam/index.html
+#   - ls -lad ~/website/data/example/m4d_textfield
+#   - cd ~/website && docker-compose restart
+#
+RSYNC_DESTINATION=":~/website/data/example/m4d_textfield/"
+EXAMPLE_URL="http://m4d_textfield.example.mikemitterer.at/"
+

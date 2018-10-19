@@ -10,6 +10,8 @@
 import at.mikemitterer.dbuilder.cpyFile
 import at.mikemitterer.dbuilder.logLevel
 import at.mikemitterer.dbuilder.properties
+import at.mikemitterer.dbuilder.splitMarkdown
+import at.mikemitterer.dbuilder.mergeHtmlTemplate
 import org.apache.commons.io.FilenameUtils
 import org.slf4j.LoggerFactory
 import java.io.File
@@ -26,6 +28,8 @@ logger.debug("Script: $SCRIPT")
 logger.debug("Script-Path: $SCRIPTPATH")
 logger.debug("Sample: $SAMPLE_NAME")
 
+// If pubspec.template is set, it generates a pubspec.yaml
+// for this example based on the given template
 properties["pubspec.template"]?.apply {
 
     val filename = this.toString()
@@ -34,9 +38,36 @@ properties["pubspec.template"]?.apply {
             File(SCRIPTPATH, "pubspec.yaml"),
             mapOf("samplename" to SAMPLE_NAME))
 
-    logger.info("pubspec.yaml update for $SAMPLE_NAME! ")
+    logger.info("pubspec.yaml updated for $SAMPLE_NAME! ")
 
 } ?: run {
     logger.debug("$SAMPLE_NAME has it's own pubspec.yaml! ")
 }
 
+// If sample.html.template and sample.content are given
+// the index.html for this example will be generated based on these two files.
+//
+// sample.content is a MarkDown-File with a file-header separated by "~~~"
+properties["sample.html.template"]?.apply {
+
+    val htmlTemplate = File(this.toString()).readText()
+
+    properties["sample.content"]?.apply {
+
+        val contentFile = File(this.toString())
+        var indexHtml = File("web","index.html")
+
+        val content = splitMarkdown(contentFile.readText()) {
+            kvPairs, mdBlock ->
+            mergeHtmlTemplate(htmlTemplate, kvPairs, mdBlock)
+        }
+
+        indexHtml.writeText(content)
+        logger.info("index.html updated for $SAMPLE_NAME! ")
+
+    } ?: {
+        logger.debug("$SAMPLE_NAME has no _content/index.html! ")
+    }
+} ?: run {
+    logger.debug("$SAMPLE_NAME has no default.index.html! ")
+}

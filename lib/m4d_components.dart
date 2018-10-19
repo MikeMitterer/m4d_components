@@ -28,6 +28,8 @@ import 'package:validate/validate.dart';
 import 'package:platform_detect/platform_detect.dart';
 
 import "package:m4d_core/m4d_core.dart";
+export "package:m4d_core/m4d_core.dart";
+
 import "package:m4d_core/m4d_ioc.dart" as ioc;
 
 import "m4d_formatter.dart";

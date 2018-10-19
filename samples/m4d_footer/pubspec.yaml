@@ -1,0 +1,28 @@
+name: m4d_footer_sample
+description: Material Design Lite 'm4d_footer' Sample
+version: 0.1.4
+author: Mike Mitterer <office@mikemitterer.at>
+homepage: https://github.com/MikeMitterer/dart-material-design-lite
+
+environment:
+  sdk: ">=2.0.0 <3.0.0"
+
+dependencies:
+  validate: ^1.0.0
+
+  logging: '>=0.11.3 <1.0.0'
+  console_log_handler: ^1.0.0
+    # git: git@github.com:MikeMitterer/dart-console_log_handler.git
+    # path: /Volumes/Daten/DevLocal/DevDart/ConsoleLogHandler
+
+  m4d_components:
+    # '>=2.1.0 <3.0.0'
+    # git:
+    #  url: git@github.com:MikeMitterer/dart-material-design-lite.git
+    #  ref: v2.2
+    path: ../..
+
+dev_dependencies:
+  build_runner: any
+  build_web_compilers: any
+  sass_builder: any
