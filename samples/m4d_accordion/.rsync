@@ -6,7 +6,7 @@
 #   - sudo mkdir -p ~/website/data/example/m4d_accordion
 #   - sudo chown ubuntu:ubuntu ~/website/data/example/m4d_accordion
 #   - sudo chmod 775 ~/website/data/example/m4d_accordion
-#   - echo 'm4d_accordion' > ~/website/data/example/raspi4_cam/index.html
+#   - echo 'm4d_accordion' > ~/website/data/example/m4d_accordion/index.html
 #   - ls -lad ~/website/data/example/m4d_accordion
 #   - cd ~/website && docker-compose restart
 #

@@ -6,7 +6,7 @@
 #   - sudo mkdir -p ~/website/data/example/m4d_datatable
 #   - sudo chown ubuntu:ubuntu ~/website/data/example/m4d_datatable
 #   - sudo chmod 775 ~/website/data/example/m4d_datatable
-#   - echo 'm4d_datatable' > ~/website/data/example/raspi4_cam/index.html
+#   - echo 'm4d_datatable' > ~/website/data/example/m4d_datatable/index.html
 #   - ls -lad ~/website/data/example/m4d_datatable
 #   - cd ~/website && docker-compose restart
 #

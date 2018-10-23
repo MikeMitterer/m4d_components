@@ -6,7 +6,7 @@
 #   - sudo mkdir -p ~/website/data/example/m4d_navpills
 #   - sudo chown ubuntu:ubuntu ~/website/data/example/m4d_navpills
 #   - sudo chmod 775 ~/website/data/example/m4d_navpills
-#   - echo 'm4d_navpills' > ~/website/data/example/raspi4_cam/index.html
+#   - echo 'm4d_navpills' > ~/website/data/example/m4d_navpills/index.html
 #   - ls -lad ~/website/data/example/m4d_navpills
 #   - cd ~/website && docker-compose restart
 #

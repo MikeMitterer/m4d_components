@@ -6,7 +6,7 @@
 #   - sudo mkdir -p ~/website/data/example/m4d_checkbox
 #   - sudo chown ubuntu:ubuntu ~/website/data/example/m4d_checkbox
 #   - sudo chmod 775 ~/website/data/example/m4d_checkbox
-#   - echo 'm4d_checkbox' > ~/website/data/example/raspi4_cam/index.html
+#   - echo 'm4d_checkbox' > ~/website/data/example/m4d_checkbox/index.html
 #   - ls -lad ~/website/data/example/m4d_checkbox
 #   - cd ~/website && docker-compose restart
 #

@@ -6,7 +6,7 @@
 #   - sudo mkdir -p ~/website/data/example/m4d_lablefield
 #   - sudo chown ubuntu:ubuntu ~/website/data/example/m4d_lablefield
 #   - sudo chmod 775 ~/website/data/example/m4d_lablefield
-#   - echo 'm4d_lablefield' > ~/website/data/example/raspi4_cam/index.html
+#   - echo 'm4d_lablefield' > ~/website/data/example/m4d_lablefield/index.html
 #   - ls -lad ~/website/data/example/m4d_lablefield
 #   - cd ~/website && docker-compose restart
 #

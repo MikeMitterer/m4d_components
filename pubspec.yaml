@@ -1,5 +1,5 @@
 name: m4d_components
-description: Material Design Lite for Dart
+description: Material Design 4 Dart - Basic components
 version: 2.2.2
 author: Mike Mitterer <office@mikemitterer.at>
 homepage: http://www.material-design-lite.pub
@@ -8,71 +8,20 @@ environment:
   sdk: ">=2.0.0 <3.0.0"
 
 dependencies:
-  #intl: ^0.15.0
   validate: ^1.0.0
-
-  #platform_detect: "^1.3.0"
-  #browser_detect: ^1.0.0
 
   logging: '>=0.11.3 <1.0.0'
   console_log_handler: ^1.0.0
 
-#  route_hierarchical: ^0.7.0
-#  angel_route: ^2.0.0
-
-  #m4d_router: ^0.2.0
-    # path: /Volumes/Daten/DevLocal/DevDart/m4d/m4d_router
-
-  #reflected_mustache: ^1.0.0
-    # path: /Volumes/Daten/DevLocal/DevDart/reflected_mustache
-    
-  #mustache: # ^0.2.0
-    # path: /Volumes/Daten/DevLocal/DevDart/mustache
-    # git: git://github.com/xxgreg/mustache
-
-  #dnd: ^1.0.0
-    # path: /Volumes/Daten/DevLocal/DevDart/dart-dnd
-
-  #dryice: ^2.0.0
-    # path: /Volumes/Daten/DevLocal/DevDart/dryice
-
-
   path: ^1.4.0
 
-  #l10n: ^2.0.0
-    # path: /Volumes/Daten/DevLocal/DevDart/L10N4Dart
-
-  m4d_core:
-    path: /Volumes/Daten/DevLocal/DevDart/m4d/m4d_core
+  m4d_core: '>=0.1.0 <1.0.0'
+    # path: /Volumes/Daten/DevLocal/DevDart/m4d/m4d_core
     
-#dependency_overrides:
-#  build_runner: ^0.9.1
-#  build_config: ^0.3.0
-#  front_end: ^0.1.2
-
 dev_dependencies:
   test: any
 
   build_runner: any
   build_test: any
   build_web_compilers: any
-    
-  args: any
-#  material_icons: any
-  grinder: any
-  mdl_grinder:
-    # git: https://github.com/MikeMitterer/dart-mdl-grinder
-    path: /Volumes/Daten/DevLocal/DevDart/MaterialGrinder
-
-#transformers:
-##  - di
-#  - mdl
-#
-#  - $dart2js:
-#      commandLineOptions: [--enable-experimental-mirrors]
-
-#web:
-#  compiler:
-#    debug: dartdevc
-
 

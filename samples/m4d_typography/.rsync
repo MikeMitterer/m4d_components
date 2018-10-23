@@ -6,7 +6,7 @@
 #   - sudo mkdir -p ~/website/data/example/m4d_typography
 #   - sudo chown ubuntu:ubuntu ~/website/data/example/m4d_typography
 #   - sudo chmod 775 ~/website/data/example/m4d_typography
-#   - echo 'm4d_typography' > ~/website/data/example/raspi4_cam/index.html
+#   - echo 'm4d_typography' > ~/website/data/example/m4d_typography/index.html
 #   - ls -lad ~/website/data/example/m4d_typography
 #   - cd ~/website && docker-compose restart
 #

@@ -6,7 +6,7 @@
 #   - sudo mkdir -p ~/website/data/example/m4d_icontoggle
 #   - sudo chown ubuntu:ubuntu ~/website/data/example/m4d_icontoggle
 #   - sudo chmod 775 ~/website/data/example/m4d_icontoggle
-#   - echo 'm4d_icontoggle' > ~/website/data/example/raspi4_cam/index.html
+#   - echo 'm4d_icontoggle' > ~/website/data/example/m4d_icontoggle/index.html
 #   - ls -lad ~/website/data/example/m4d_icontoggle
 #   - cd ~/website && docker-compose restart
 #

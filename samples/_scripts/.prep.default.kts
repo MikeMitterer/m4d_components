@@ -71,3 +71,17 @@ properties["sample.html.template"]?.apply {
 } ?: run {
     logger.debug("$SAMPLE_NAME has no default.index.html! ")
 }
+
+properties["sample.appstyle"]?.apply {
+
+    // default.app.scss
+    val filename = this.toString()
+
+    cpyFile(File(filename),
+            File(File(SCRIPTPATH,"web"), "_app.scss"), emptyMap<String,String>())
+
+    logger.info("_app.scss updated for $SAMPLE_NAME! ")
+
+} ?: run {
+    logger.debug("$SAMPLE_NAME has it's own _app.scss! ")
+}

@@ -65,13 +65,19 @@ fi
 usage() {
     echo
     echo "Usage: ${APPNAME} [ options ]"
+    echo
     echo -e "\t-l | --list     [example_name]              Lists all examples from '${YELLOW}${EXAMPLE_FOLDER}'${NC}-folder"
-    echo -e "\t-x | --prepare  [example_name]              Prepare sample"
+    echo
+    echo -e "\t- Init ------------------------------------------------------------------------------"
+    echo -e "\t-x | --prepare  [example_name]              Prepare sample (calls 'prep-script')"
+    echo -e "\t-g | --generate [example_name] [--force]    Generates rsync-Config"
+    echo
+    echo -e "\t- Day2Day ---------------------------------------------------------------------------"
     echo -e "\t-u | --update   [example_name]              Updates the sample"
     echo -e "\t-d | --deploy   [example_name] [--release]  Creates 'deploy'-dir for Dart"
     echo -e "\t-p | --publish  [example_name] [--force]    Publish samples to AWS/S3 (only on day ${PUBLISH_ONLY_ON_DAY})"
-    echo -e "\t                                              use --force to ignore Monday as publishing day"
-    echo -e "\t-g | --generate [example_name] [--force]    Generates rsync-Config"
+    echo -e "\t                                                use --force to ignore"
+    echo -e "\t                                                Monday as publishing day"
 }
 
 CMDLINE=${1:-}
@@ -88,7 +94,7 @@ case "${CMDLINE}" in
     ;;
 
     -x|prepare|-prepare|--prepare)
-        if [ -n "${OPTION1+set}" -a "${OPTION1}" != "--force"  ]; then
+        if [ -n "${OPTION1+set}" -a "${OPTION1}" != ""  ]; then
             prepareSamples "${EXAMPLE_FOLDER}/${OPTION1}"
         else
             prepareSamples "${EXAMPLES[@]}"
@@ -104,7 +110,7 @@ case "${CMDLINE}" in
     ;;
 
     -d|deploy|-deploy|--deploy)
-        if [ -n "${OPTION1+set}" -a "${OPTION1}" != ""  ]; then
+        if [ -n "${OPTION1+set}" -a "${OPTION1}" != "--release"  ]; then
             deploySamples "${EXAMPLE_FOLDER}/${OPTION1}"
         else
             deploySamples "${EXAMPLES[@]}"

@@ -6,7 +6,7 @@
 #   - sudo mkdir -p ~/website/data/example/m4d_badge
 #   - sudo chown ubuntu:ubuntu ~/website/data/example/m4d_badge
 #   - sudo chmod 775 ~/website/data/example/m4d_badge
-#   - echo 'm4d_badge' > ~/website/data/example/raspi4_cam/index.html
+#   - echo 'm4d_badge' > ~/website/data/example/m4d_badge/index.html
 #   - ls -lad ~/website/data/example/m4d_badge
 #   - cd ~/website && docker-compose restart
 #
