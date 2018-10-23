@@ -21,4 +21,4 @@
     find samples/ -name ".rsync" | xargs awk 'FNR==14' | cut -d ' ' -f 5- | sed -e "s/.*http:\/\/\([^/]*\)\/.*/http:\/\/\1/"
     
     # Gen Links for README
-    find samples/ -name ".rsync" | xargs awk 'FNR==14' | cut -d ' ' -f 5- | sed -e "s/.*http:\/\/\([^/]*\)\/.*/\[\1\]\(http:\/\/\1\)/"        
+    find samples/ -name ".rsync" | xargs awk 'FNR==14' | cut -d ' ' -f 5- | sed -e "s/.*http:\/\/\([^/]*\)\/.*/-\[\1\]\(http:\/\/\1\)/"        
