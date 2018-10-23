@@ -32,4 +32,17 @@
    - [m4d_typography.example.mikemitterer.at](http://m4d_typography.example.mikemitterer.at)
    
 
-                                                    
+## Usage
+There is more documentation on the way but here is an example how
+`main.dart` looks for the [Accordion-Example](http://m4d_accordion.example.mikemitterer.at)
+
+```dart
+import 'package:m4d_core/m4d_ioc.dart' as ioc;
+import "package:m4d_components/m4d_components.dart";
+
+main() async {
+
+    ioc.IOCContainer.bindModules([ CoreComponentsModule() ]);
+    await componentHandler().run();
+}
+```                                                    
