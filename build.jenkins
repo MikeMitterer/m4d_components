@@ -18,7 +18,6 @@ pipeline {
                 ansiColor('xterm') {
                     sh 'dartanalyzer lib/'
                     sh 'dartanalyzer test/'
-                    sh 'dartanalyzer example/browser/web/'
                 }
             }
         }

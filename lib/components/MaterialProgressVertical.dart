@@ -92,8 +92,8 @@ class MaterialProgressVertical extends MdlComponent {
             element.append(_indicatorbar);
 
             if (element.dataset.containsKey(_MaterialProgressDataSet.SECTIONS)) {
-                final int sections = int.parse(
-                    element.dataset[_MaterialProgressDataSet.SECTIONS], onError: (_) => 0);
+                final int sections
+                    = int.tryParse(element.dataset[_MaterialProgressDataSet.SECTIONS]) ?? 0;
 
                 for (int hrIndex = 0; hrIndex < sections; hrIndex++) {
                     final dom.SpanElement hr = new dom.SpanElement();

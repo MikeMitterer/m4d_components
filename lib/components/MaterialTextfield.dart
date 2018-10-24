@@ -197,11 +197,10 @@ class MaterialTextfield extends MdlComponent with FallbackFormatter {
                     element.attributes[_constant.MAX_ROWS_ATTRIBUTE] != null &&
                     element.attributes[_constant.MAX_ROWS_ATTRIBUTE].isNotEmpty ) {
 
-                    _maxRows = int.parse(element.getAttribute(_constant.MAX_ROWS_ATTRIBUTE),
-                    onError: (final String value) {
+                    _maxRows = int.tryParse(element.getAttribute(_constant.MAX_ROWS_ATTRIBUTE)) ?? _constant.NO_MAX_ROWS;
+                    if(_maxRows == _constant.NO_MAX_ROWS) {
                         _logger.severe('maxrows attribute provided, but wasn\'t a number: $value');
-                        _maxRows = _constant.NO_MAX_ROWS;
-                    });
+                    }
                 }
 
                 if (inputElement.attributes.containsKey('placeholder')) {

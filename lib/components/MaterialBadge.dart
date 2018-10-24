@@ -51,11 +51,11 @@ class MaterialBadge extends MdlComponent {
     void _init() {
         _logger.fine("MaterialBadge - init");
 
-        /// Reformat according to [MaterialFormatter] definition
-        void _kickInFormatter() {
-            // setter = getter
-            value = value;
-        }
+        // Reformat according to [MaterialFormatter] definition
+        // void _kickInFormatter() {
+        //    // setter = getter
+        //    value = value;
+        // }
 
         //_kickInFormatter();
         element.classes.add(_cssClasses.IS_UPGRADED);
