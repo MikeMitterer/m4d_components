@@ -32,6 +32,7 @@ main() async {
     // configLogging();
 
     ioc.IOCContainer.bindModules([ CoreComponentsModule() ]);
+    await componentHandler().run();
 
     group("Button",() {
 

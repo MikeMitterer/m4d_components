@@ -8,23 +8,37 @@ pipeline {
                 timeout(time: 15, unit: 'MINUTES') {
                     ansiColor('xterm') {
                         sh 'pub update'
-                        sh 'pub global activate grinder'
                     }
                 }
+
             }
         }
         stage('Analyze') {
             steps {
                 ansiColor('xterm') {
-                    sh 'grind analyze'
+                    sh 'dartanalyzer lib/'
+                    sh 'dartanalyzer test/'
+                    sh 'dartanalyzer example/browser/web/'
                 }
             }
         }
         stage('Test') {
             steps {
                 ansiColor('xterm') {
-                    sh 'pub run test test/unit'
-                    sh 'pub run test test/visual'
+                    sh 'pub run test test/unit -p chrome'
+                    sh 'pub run test test/visual -p chrome'
+                }
+            }
+        }
+
+        stage('Deploy samples') {
+            steps {
+                timeout(time: 30, unit: 'MINUTES') {
+                    ansiColor('xterm') {
+                        sh './deploy-samples.sh --update'
+                        sh './deploy-samples.sh --deploy --release'
+                        sh './deploy-samples.sh --publish --force'
+                    }
                 }
             }
         }
