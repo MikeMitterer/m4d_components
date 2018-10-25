@@ -34,6 +34,7 @@ pipeline {
             steps {
                 timeout(time: 30, unit: 'MINUTES') {
                     ansiColor('xterm') {
+                        sh './deploy-samples.sh --prepare'
                         sh './deploy-samples.sh --update'
                         sh './deploy-samples.sh --deploy --release'
                         sh './deploy-samples.sh --publish --force'
