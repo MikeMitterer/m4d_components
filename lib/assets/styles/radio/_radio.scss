@@ -6,4 +6,8 @@
 
 .mdl-radio {
     //@include avoid-blue-box-on-double-click();
+
+    &__label {
+        white-space: nowrap;
+    }
 }

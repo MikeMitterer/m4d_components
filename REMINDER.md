@@ -17,6 +17,10 @@
     
 ### Show all URL for all the .rsyncs
 
+    # Zeigt Zeile x auf .rsync
+    export LINE=9 && \
+        find samples/ -name ".rsync" | xargs awk "FNR==${LINE}" | cut -d ' ' -f 5- | sed -e "s/.*http:\/\/\([^/]*\)\/.*/http:\/\/\1/"
+    
     # List URLs
     find samples/ -name ".rsync" | xargs awk 'FNR==14' | cut -d ' ' -f 5- | sed -e "s/.*http:\/\/\([^/]*\)\/.*/http:\/\/\1/"
     

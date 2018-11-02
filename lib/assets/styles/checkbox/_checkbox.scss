@@ -5,6 +5,12 @@
 @import "functions";
 @import "checkbox.orig";
 
+.mdl-checkbox {
+    &__label {
+        white-space : nowrap;
+    }
+}
+
 //.mdl-checkbox {
 //    //@include avoid-blue-box-on-double-click();
 //}
