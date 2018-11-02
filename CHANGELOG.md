@@ -6,6 +6,12 @@ Material Design 4 Dart - Basic components
 ### Feature
 * All samples are live [6fdfbae](https://github.com/mikemitterer/m4d_components/commit/6fdfbae28d779efec5990fe65dd58f06dedd4d7f)
 
+### Bugs
+* Samples had wrong GH url [b4a959b](https://github.com/mikemitterer/m4d_components/commit/b4a959b8baceb88a908acb7aba2e48503e311035)
+* m4d_button-sample could not find the right ID [3794493](https://github.com/mikemitterer/m4d_components/commit/3794493853c6dcd20ac7546dc330dda8f1d302ec)
+* Missing 'prpare' for deploy-samples [67a3892](https://github.com/mikemitterer/m4d_components/commit/67a3892f6e58d550ae6e9b4acd3c4d3738f49045)
+* pubspec - local path [a6f7f15](https://github.com/mikemitterer/m4d_components/commit/a6f7f1540913c80132dcb504ca1a3fdacce89c0f)
+
 ### Docs
 * Example for 'main' [a3e7da3](https://github.com/mikemitterer/m4d_components/commit/a3e7da38dad46ba2d42ecfa6c5db6958d5bb3bb3)
 * Wrong homepage in pubspec [7a51021](https://github.com/mikemitterer/m4d_components/commit/7a5102150ba290606170ac322aec038cd7cb370d)
