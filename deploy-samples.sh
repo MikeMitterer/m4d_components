@@ -67,6 +67,9 @@ usage() {
     echo "Usage: ${APPNAME} [ options ]"
     echo
     echo -e "\t-l | --list     [example_name]              Lists all examples from '${YELLOW}${EXAMPLE_FOLDER}'${NC}-folder"
+    echo -e "\t     --urls                                 Lists url's"
+    echo -e "\t     --urls-readme                          List url's in MD-Format"
+    echo -e "\t     --urls-web                             List url's in HTML-Format"
     echo
     echo -e "\t- Init ------------------------------------------------------------------------------"
     echo -e "\t-x | --prepare  [example_name]              Prepare sample (calls 'prep-script')"
@@ -91,6 +94,18 @@ case "${CMDLINE}" in
         else
             listSamples "${EXAMPLES[@]}"
         fi
+    ;;
+
+    --urls)
+        listURLs
+    ;;
+
+    --urls-readme)
+        listURLs4README
+    ;;
+
+    --urls-web)
+        listURL4WebSite "Material 4 Dart / Basic Components" "m4d_components" "${EXAMPLES[@]}"
     ;;
 
     -x|prepare|-prepare|--prepare)
