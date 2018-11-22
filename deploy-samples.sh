@@ -105,6 +105,7 @@ case "${CMDLINE}" in
     ;;
 
     --urls-web)
+        # mkdir -p tmp && ./deploy-samples.sh --urls-web > tmp/links4web.html
         listURL4WebSite "Material 4 Dart / Basic Components" "m4d_components" "${EXAMPLES[@]}"
     ;;
 

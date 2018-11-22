@@ -54,7 +54,8 @@ class MaterialAccordion extends MdlComponent {
         //_init();
     }
 
-    static MaterialAccordion widget(final dom.HtmlElement element) => mdlComponent(element,MaterialAccordion) as MaterialAccordion;
+    static MaterialAccordion widget(final dom.HtmlElement element)
+        => mdlComponent(element,MaterialAccordion) as MaterialAccordion;
 
     @override
     void attached() {
@@ -189,7 +190,7 @@ class MaterialAccordion extends MdlComponent {
 /// creates MdlConfig for MaterialAccordion
 MdlConfig materialAccordionConfig() => new MdlWidgetConfig<MaterialAccordion>(
     _MaterialAccordionCssClasses.MAIN_CLASS, (final dom.HtmlElement element,final ioc.IOCContainer iocContainer)
-=> new MaterialAccordion.fromElement(element,iocContainer));
+        => new MaterialAccordion.fromElement(element,iocContainer));
 
 /// registration-Helper
 void registerMaterialAccordion() => componentHandler().register(materialAccordionConfig());

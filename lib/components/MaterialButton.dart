@@ -29,7 +29,6 @@ part of m4d_components;
 ///     final MaterialButton button = MaterialButton.widget(dom.querySelector("#button");
 ///     button.disable();
 ///
-@Component
 class MaterialButton extends MdlComponent {
     final Logger _logger = new Logger('mdlcomponents.MaterialButton');
 
