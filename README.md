@@ -10,7 +10,6 @@
    - [m4d_button.example.mikemitterer.at](http://m4d_button.example.mikemitterer.at)
    - [m4d_checkbox.example.mikemitterer.at](http://m4d_checkbox.example.mikemitterer.at)
    - [m4d_datatable.example.mikemitterer.at](http://m4d_datatable.example.mikemitterer.at)
-   - [m4d_datatable2.example.mikemitterer.at](http://m4d_datatable2.example.mikemitterer.at)
    - [m4d_footer.example.mikemitterer.at](http://m4d_footer.example.mikemitterer.at)
    - [m4d_grid.example.mikemitterer.at](http://m4d_grid.example.mikemitterer.at)
    - [m4d_icontoggle.example.mikemitterer.at](http://m4d_icontoggle.example.mikemitterer.at)
