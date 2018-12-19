@@ -3,6 +3,6 @@ import "package:m4d_components/m4d_components.dart";
 
 main() async {
 
-    ioc.IOCContainer.bindModules([ CoreComponentsModule() ]);
+    ioc.Container.bindModules([ CoreComponentsModule() ]);
     await componentHandler().run();
 }

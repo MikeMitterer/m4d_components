@@ -35,7 +35,7 @@ class MaterialButton extends MdlComponent {
     static const _MaterialButtonConstant _constant = const _MaterialButtonConstant();
     static const _MaterialButtonCssClasses _cssClasses = const _MaterialButtonCssClasses();
 
-    MaterialButton.fromElement(final dom.HtmlElement element,final ioc.IOCContainer iocContainer)
+    MaterialButton.fromElement(final dom.HtmlElement element,final ioc.Container iocContainer)
         : super(element,iocContainer) {
         _init();
     }
@@ -121,7 +121,7 @@ void registerMaterialButton() {
     /// creates MdlConfig for MaterialButton
     final MdlConfig config = new MdlWidgetConfig<MaterialButton>(
         _MaterialButtonCssClasses.MAIN_CLASS,
-            (final dom.HtmlElement element,final ioc.IOCContainer iocContainer)
+            (final dom.HtmlElement element,final ioc.Container iocContainer)
                 => new MaterialButton.fromElement(element,iocContainer));
 
     componentHandler().register(config);

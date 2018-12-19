@@ -33,7 +33,7 @@ class MaterialProgressVertical extends MdlComponent {
     dom.DivElement _auxbar;
     dom.DivElement _indicatorbar;
 
-    MaterialProgressVertical.fromElement(final dom.HtmlElement element, final ioc.IOCContainer iocContainer)
+    MaterialProgressVertical.fromElement(final dom.HtmlElement element, final ioc.Container iocContainer)
         : super(element, iocContainer) {
         _init();
     }
@@ -123,7 +123,7 @@ class MaterialProgressVertical extends MdlComponent {
 MdlConfig materialProgressVerticalConfig() =>
     new MdlWidgetConfig<MaterialProgressVertical>(
         _MaterialProgressVerticalCssClasses.MAIN_CLASS, (final dom.HtmlElement element,
-        final ioc.IOCContainer iocContainer) => new MaterialProgressVertical.fromElement(element, iocContainer));
+        final ioc.Container iocContainer) => new MaterialProgressVertical.fromElement(element, iocContainer));
 
 /// registration-Helper
 void registerMaterialProgressVertical() => componentHandler().register(materialProgressVerticalConfig());

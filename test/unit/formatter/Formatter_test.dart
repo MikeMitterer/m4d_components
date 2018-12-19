@@ -13,7 +13,7 @@ import 'package:m4d_components/services.dart' as service;
 main() async {
     // final Logger _logger = new Logger("test.unit.formatter");
 
-    final injector = ioc.IOCContainer.bindModules([ FormatterModule() ]);
+    final injector = ioc.Container.bindModules([ FormatterModule() ]);
     final formatters = injector.resolve(service.Formatters).as<Formatters>(); // equivalent to 'new Formatters();'
 
     group('Formatter', () {

@@ -48,7 +48,7 @@ class _MaterialSpinnerConstant {
 
 /// creates MdlConfig for MaterialSpinner
 MdlConfig materialSpinnerConfig() => new MdlWidgetConfig<MaterialSpinner>(
-    _MaterialSpinnerCssClasses.MAIN_CLASS, (final dom.HtmlElement element,final ioc.IOCContainer iocContainer)
+    _MaterialSpinnerCssClasses.MAIN_CLASS, (final dom.HtmlElement element,final ioc.Container iocContainer)
     => new MaterialSpinner.fromElement(element,iocContainer));
 
 /// registration-Helper
@@ -60,7 +60,7 @@ class MaterialSpinner extends MdlComponent {
     static const _MaterialSpinnerConstant _constant = const _MaterialSpinnerConstant();
     static const _MaterialSpinnerCssClasses _cssClasses = const _MaterialSpinnerCssClasses();
 
-    MaterialSpinner.fromElement(final dom.HtmlElement element,final ioc.IOCContainer iocContainer)
+    MaterialSpinner.fromElement(final dom.HtmlElement element,final ioc.Container iocContainer)
         : super(element,iocContainer) {
         _init();
     }

@@ -32,7 +32,7 @@ main() async {
     // final Logger _logger = new Logger("test.Radio");
     // configLogging();
 
-    ioc.IOCContainer.bindModules([ CoreComponentsModule() ]);
+    ioc.Container.bindModules([ CoreComponentsModule() ]);
     await componentHandler().run();
     
     group('Radio', () {

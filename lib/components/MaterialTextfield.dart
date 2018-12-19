@@ -37,7 +37,7 @@ class MaterialTextfield extends MdlComponent with FallbackFormatter {
     dom.HtmlElement _input;
     dom.LabelElement _label;
 
-    MaterialTextfield.fromElement(final dom.HtmlElement element,final ioc.IOCContainer iocContainer)
+    MaterialTextfield.fromElement(final dom.HtmlElement element,final ioc.Container iocContainer)
         : super(element,iocContainer) {
         _init();
     }
@@ -336,7 +336,7 @@ class MaterialTextfield extends MdlComponent with FallbackFormatter {
 
 /// creates MdlConfig for MaterialTextfield
 MdlConfig materialTextfieldConfig() => new MdlWidgetConfig<MaterialTextfield>(
-    _MaterialTextfieldCssClasses.MAIN_CLASS, (final dom.HtmlElement element,final ioc.IOCContainer iocContainer)
+    _MaterialTextfieldCssClasses.MAIN_CLASS, (final dom.HtmlElement element,final ioc.Container iocContainer)
 => new MaterialTextfield.fromElement(element,iocContainer));
 
 /// registration-Helper

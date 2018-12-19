@@ -36,7 +36,7 @@ class Application extends MaterialApplication {
 Future main() async {
     configLogging(show: Level.INFO);
 
-    ioc.IOCContainer.bindModules([ CoreComponentsModule() ])
+    ioc.Container.bindModules([ CoreComponentsModule() ])
         .bind(service.Application).to(Application());
 
     final Application app = await componentHandler().run<Application>();

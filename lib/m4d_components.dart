@@ -99,7 +99,7 @@ void registerMdlComponents() {
     registerMaterialRipple();
 }
 
-class CoreComponentsModule extends ioc.IOCModule {
+class CoreComponentsModule extends ioc.Module {
   @override
   configure() {
     registerMdlComponents();
@@ -107,6 +107,6 @@ class CoreComponentsModule extends ioc.IOCModule {
   }
 
   @override
-  List<ioc.IOCModule> get dependsOn => [ FormatterModule() ];
+  List<ioc.Module> get dependsOn => [ FormatterModule() ];
 }
 

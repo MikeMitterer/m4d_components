@@ -7,7 +7,7 @@ import "package:m4d_components/m4d_components.dart";
 main() async {
     const int TIMEOUT_IN_SECS = 5;
 
-    ioc.IOCContainer.bindModules([ CoreComponentsModule() ]);
+    ioc.Container.bindModules([ CoreComponentsModule() ]);
     await componentHandler().run();
 
     final dom.HtmlElement element = dom.querySelector(".mdl-menu");

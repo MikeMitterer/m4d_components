@@ -8,7 +8,7 @@ import "package:m4d_components/m4d_components.dart";
 main() async {
     final Logger _logger = new Logger('example.progress.main');
 
-    ioc.IOCContainer.bindModules([ CoreComponentsModule() ]);
+    ioc.Container.bindModules([ CoreComponentsModule() ]);
     await componentHandler().run();
 
     _logger.info("All components upgraded");

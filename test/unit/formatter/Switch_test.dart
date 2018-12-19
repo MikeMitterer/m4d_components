@@ -14,7 +14,7 @@ import "package:m4d_components/m4d_formatter.dart";
 main() async {
     // final Logger _logger = new Logger("test.Formatter.Button");
 
-    ioc.IOCContainer.bindModules([ FormatterModule() ]);
+    ioc.Container.bindModules([ FormatterModule() ]);
 
     final renderer = new DomRenderer();
     final parent = new dom.DivElement();

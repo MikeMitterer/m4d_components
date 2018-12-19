@@ -32,7 +32,7 @@ main() async {
     // final Logger _logger = new Logger("test.IconToggle");
     // configLogging();
 
-    ioc.IOCContainer.bindModules([ CoreComponentsModule() ]);
+    ioc.Container.bindModules([ CoreComponentsModule() ]);
     await componentHandler().run();
 
     group('IconToggle', () {

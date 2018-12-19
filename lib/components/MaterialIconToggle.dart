@@ -34,7 +34,7 @@ class MaterialIconToggle extends MdlComponent {
 
     dom.InputElement _inputElement = null;
 
-    MaterialIconToggle.fromElement(final dom.HtmlElement element,final ioc.IOCContainer iocContainer)
+    MaterialIconToggle.fromElement(final dom.HtmlElement element,final ioc.Container iocContainer)
         : super(element,iocContainer) {
         _init();
     }
@@ -184,7 +184,7 @@ class MaterialIconToggle extends MdlComponent {
 
 /// creates MdlConfig for MaterialIconToggle
 MdlConfig materialIconToggleConfig() => new MdlWidgetConfig<MaterialIconToggle>(
-    _MaterialIconToggleCssClasses.MAIN_CLASS, (final dom.HtmlElement element,final ioc.IOCContainer iocContainer)
+    _MaterialIconToggleCssClasses.MAIN_CLASS, (final dom.HtmlElement element,final ioc.Container iocContainer)
 => new MaterialIconToggle.fromElement(element,iocContainer));
 
 /// registration-Helper

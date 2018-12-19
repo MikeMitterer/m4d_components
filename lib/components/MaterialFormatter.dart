@@ -44,7 +44,7 @@ class MaterialFormatter extends MdlComponent {
     /// Like Unix Pipe for formatters
     FormatterPipeline _lazyPipe;
 
-    MaterialFormatter.fromElement(final dom.HtmlElement element,final ioc.IOCContainer injector)
+    MaterialFormatter.fromElement(final dom.HtmlElement element,final ioc.Container injector)
         : super(element,injector) {
         
         _init();
@@ -60,7 +60,7 @@ class MaterialFormatter extends MdlComponent {
         } on String {
 
             // ioc.IOCContainer() is a singleton - so no props here
-            formatter = (_dummyFormatter ??= new MaterialDummyFormatter(element,ioc.IOCContainer()));
+            formatter = (_dummyFormatter ??= new MaterialDummyFormatter(element,ioc.Container()));
         }
         return formatter;
     }
@@ -101,7 +101,7 @@ class MaterialDummyFormatter extends MaterialFormatter {
 
     static const _MaterialFormatterCssClasses _cssClasses = const _MaterialFormatterCssClasses();
 
-    MaterialDummyFormatter(final dom.HtmlElement element,final ioc.IOCContainer iocContainer)
+    MaterialDummyFormatter(final dom.HtmlElement element,final ioc.Container iocContainer)
         : super.fromElement(element,iocContainer);
 
     @override
@@ -128,7 +128,7 @@ class MaterialDummyFormatter extends MaterialFormatter {
 void registerMaterialFormatter() {
     final MdlConfig config = new MdlConfig<MaterialFormatter>(
         _MaterialFormatterConstant.WIDGET_SELECTOR,
-            (final dom.HtmlElement element,final ioc.IOCContainer iocContainer) => new MaterialFormatter.fromElement(element,iocContainer)
+            (final dom.HtmlElement element,final ioc.Container iocContainer) => new MaterialFormatter.fromElement(element,iocContainer)
     );
 
     // Register this component before MaterialWidget so that we can kick in this

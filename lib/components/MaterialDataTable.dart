@@ -56,7 +56,7 @@ class MaterialDataTable extends MdlComponent {
 
     dom.LabelElement _headerCheckbox;
 
-    MaterialDataTable.fromElement(final dom.HtmlElement element, final ioc.IOCContainer iocContainer)
+    MaterialDataTable.fromElement(final dom.HtmlElement element, final ioc.Container iocContainer)
         : super(element, iocContainer) {
 
         _init();
@@ -196,7 +196,7 @@ class MaterialDataTable extends MdlComponent {
 void registerMaterialDataTable() {
     final MdlConfig config = new MdlWidgetConfig<MaterialDataTable>(
         _MaterialDataTableConstant.WIDGET_SELECTOR,
-            (final dom.HtmlElement element, final ioc.IOCContainer iocContainer) => new MaterialDataTable.fromElement(element, iocContainer)
+            (final dom.HtmlElement element, final ioc.Container iocContainer) => new MaterialDataTable.fromElement(element, iocContainer)
     );
     componentHandler().register(config);
 }

@@ -38,7 +38,7 @@ class MaterialCheckbox extends MdlComponent with FallbackFormatter {
 
     dom.CheckboxInputElement _inputElement = null;
 
-    MaterialCheckbox.fromElement(final dom.HtmlElement element,final ioc.IOCContainer iocContainer)
+    MaterialCheckbox.fromElement(final dom.HtmlElement element,final ioc.Container iocContainer)
         : super(element,iocContainer) {
         _init();
     }
@@ -253,7 +253,7 @@ class MaterialCheckbox extends MdlComponent with FallbackFormatter {
 
 /// creates MdlConfig for MaterialCheckbox
 MdlConfig materialCheckboxConfig() => new MdlWidgetConfig<MaterialCheckbox>(
-    _MaterialCheckboxCssClasses.MAIN_CLASS, (final dom.HtmlElement element,final ioc.IOCContainer iocContainer)
+    _MaterialCheckboxCssClasses.MAIN_CLASS, (final dom.HtmlElement element,final ioc.Container iocContainer)
 => new MaterialCheckbox.fromElement(element,iocContainer));
 
 /// registration-Helper

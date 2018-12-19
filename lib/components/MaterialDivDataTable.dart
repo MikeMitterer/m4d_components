@@ -39,7 +39,7 @@ class MaterialDivDataTable extends MdlComponent {
     StreamController<DataTableChangedEvent> _onChange;
     StreamController<DataTableRowClickedEvent> _onRowClick;
 
-    MaterialDivDataTable.fromElement(final dom.HtmlElement element, final ioc.IOCContainer iocContainer)
+    MaterialDivDataTable.fromElement(final dom.HtmlElement element, final ioc.Container iocContainer)
         : super(element, iocContainer) {
 
         _init();
@@ -199,7 +199,7 @@ class MaterialDivDataTableRow extends MdlComponent {
     /// See [_selectableCheckbox]
     MaterialCheckbox _checkbox;
 
-    MaterialDivDataTableRow.fromElement(final dom.HtmlElement element, final ioc.IOCContainer iocContainer)
+    MaterialDivDataTableRow.fromElement(final dom.HtmlElement element, final ioc.Container iocContainer)
         : super(element, iocContainer) {
     }
 
@@ -382,7 +382,7 @@ void registerMaterialDivDataTable() {
 void _registerMaterialDivDataTable() {
     final MdlConfig config = new MdlWidgetConfig<MaterialDivDataTable>(
         _MaterialDivDataTableConstant.WIDGET_SELECTOR,
-        (final dom.HtmlElement element, final ioc.IOCContainer iocContainer) => new MaterialDivDataTable.fromElement(element, iocContainer)
+        (final dom.HtmlElement element, final ioc.Container iocContainer) => new MaterialDivDataTable.fromElement(element, iocContainer)
     );
     componentHandler().register(config);
 }
@@ -390,7 +390,7 @@ void _registerMaterialDivDataTable() {
 void _registerMaterialDivDataTableRow() {
     final MdlConfig config = new MdlWidgetConfig<MaterialDivDataTableRow>(
         _MaterialDivDataTableRowConstant.WIDGET_SELECTOR,
-        (final dom.HtmlElement element, final ioc.IOCContainer iocContainer) => new MaterialDivDataTableRow.fromElement(element, iocContainer)
+        (final dom.HtmlElement element, final ioc.Container iocContainer) => new MaterialDivDataTableRow.fromElement(element, iocContainer)
     );
 
     // _registerMaterialDivDataTable has priority [RegistrationPriority.WIDGET] so here we make sure that

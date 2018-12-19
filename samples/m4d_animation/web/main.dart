@@ -9,6 +9,6 @@ import 'package:m4d_animation_sample/animation_demo.dart';
 Future main() async {
     configLogging();
 
-    ioc.IOCContainer.bindModules([ CoreComponentsModule(), AnimationDemoModule() ]);
+    ioc.Container.bindModules([ CoreComponentsModule(), AnimationDemoModule() ]);
     await componentHandler().run();
 }

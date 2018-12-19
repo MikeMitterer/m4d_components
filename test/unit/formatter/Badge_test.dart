@@ -16,7 +16,7 @@ main() async {
     
     configLogging(show: Level.INFO);
 
-    ioc.IOCContainer.bindModules([ FormatterModule() ]);
+    ioc.Container.bindModules([ FormatterModule() ]);
 
     final renderer = new DomRenderer();
     final parent = new dom.DivElement();

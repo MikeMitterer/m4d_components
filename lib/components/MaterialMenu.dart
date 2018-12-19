@@ -73,7 +73,7 @@ class MaterialMenu extends MdlComponent {
         return _forElement;
     }
 
-    MaterialMenu.fromElement(final dom.HtmlElement element,final ioc.IOCContainer iocContainer)
+    MaterialMenu.fromElement(final dom.HtmlElement element,final ioc.Container iocContainer)
         : super(element,iocContainer) {
         _init();
     }
@@ -474,7 +474,7 @@ class MaterialMenu extends MdlComponent {
 
 /// creates MdlConfig for MaterialMenu
 MdlConfig materialMenuConfig() => new MdlWidgetConfig<MaterialMenu>(
-    _MaterialMenuCssClasses.MAIN_CLASS, (final dom.HtmlElement element,final ioc.IOCContainer iocContainer)
+    _MaterialMenuCssClasses.MAIN_CLASS, (final dom.HtmlElement element,final ioc.Container iocContainer)
 => new MaterialMenu.fromElement(element,iocContainer));
 
 /// registration-Helper

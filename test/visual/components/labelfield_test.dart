@@ -32,7 +32,7 @@ main() async {
     // final Logger _logger = new Logger("test.Labelfield");
     // configLogging();
 
-    ioc.IOCContainer.bindModules([ CoreComponentsModule() ]);
+    ioc.Container.bindModules([ CoreComponentsModule() ]);
     await componentHandler().run();
 
     group('Labelfield', () {

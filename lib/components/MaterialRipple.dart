@@ -50,7 +50,7 @@ class _MaterialRippleConstant {
 MdlConfig materialRippleConfig() {
     final MdlConfig<MaterialRipple> config = new MdlConfig<MaterialRipple>(
         _MaterialRippleCssClasses.MAIN_CLASS,
-            (final dom.HtmlElement element, final ioc.IOCContainer iocContainer)
+            (final dom.HtmlElement element, final ioc.Container iocContainer)
             => new MaterialRipple.fromElement(element, iocContainer));
 
     config.priority = RegistrationPriority.LAST;
@@ -82,7 +82,7 @@ class MaterialRipple extends MdlComponent {
 
     bool _initialized = false;
 
-    MaterialRipple.fromElement(final dom.HtmlElement element,final ioc.IOCContainer iocContainer)
+    MaterialRipple.fromElement(final dom.HtmlElement element,final ioc.Container iocContainer)
         : super(element,iocContainer) {
         _init();
     }

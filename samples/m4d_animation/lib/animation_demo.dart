@@ -27,7 +27,7 @@ import 'package:m4d_core/m4d_core.dart';
 
 part "demo/DemoAnimation.dart";
 
-class AnimationDemoModule extends ioc.IOCModule {
+class AnimationDemoModule extends ioc.Module {
     @override
     configure() {
         registerDemoAnimation();

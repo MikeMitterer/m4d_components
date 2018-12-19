@@ -50,7 +50,7 @@ class _MaterialSliderConstant {
 
 /// creates MdlConfig for MaterialSlider
 MdlConfig materialSliderConfig() => new MdlWidgetConfig<MaterialSlider>(
-    _MaterialSliderCssClasses.MAIN_CLASS, (final dom.HtmlElement element,final ioc.IOCContainer iocContainer)
+    _MaterialSliderCssClasses.MAIN_CLASS, (final dom.HtmlElement element,final ioc.Container iocContainer)
     => new MaterialSlider.fromElement(element,iocContainer));
 
 /// registration-Helper
@@ -68,7 +68,7 @@ class MaterialSlider extends MdlComponent {
     dom.DivElement _backgroundLower = null;
     dom.DivElement _backgroundUpper = null;
 
-    MaterialSlider.fromElement(final dom.HtmlElement element,final ioc.IOCContainer iocContainer)
+    MaterialSlider.fromElement(final dom.HtmlElement element,final ioc.Container iocContainer)
         : super(element,iocContainer) {
         _init();
     }

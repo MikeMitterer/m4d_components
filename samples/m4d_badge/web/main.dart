@@ -11,7 +11,7 @@ main() async {
 
     configLogging();
 
-    ioc.IOCContainer.bindModules([ CoreComponentsModule() ]);
+    ioc.Container.bindModules([ CoreComponentsModule() ]);
     await componentHandler().run();
 
     final MaterialBadge badge1 = MaterialBadge.widget(dom.querySelector("#el1"));

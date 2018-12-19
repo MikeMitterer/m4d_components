@@ -104,7 +104,7 @@ class Formatters implements M4DService {
 /// final injector = ioc.IOCContainer.bindModules([ FormatterModule() ]);
 /// final formatters = injector.resolve<Formatters>(service.Formatters);
 /// final pipeline = FormatterPipeline.fromList(formatters, [ "number(2)" ]);
-class FormatterModule extends ioc.IOCModule {
+class FormatterModule extends ioc.Module {
   @override
   configure() {
     bind(service.Formatters).to(Formatters());
