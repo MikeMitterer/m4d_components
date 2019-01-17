@@ -8,7 +8,7 @@ main() async {
     const int TIMEOUT_IN_SECS = 5;
 
     ioc.Container.bindModules([ CoreComponentsModule() ]);
-    await componentHandler().run();
+    await componentHandler().upgrade();
 
     final dom.HtmlElement element = dom.querySelector(".mdl-menu");
     final MaterialMenu menu1 = MaterialMenu.widget(element);

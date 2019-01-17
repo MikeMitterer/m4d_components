@@ -33,7 +33,7 @@ main() async {
     // configLogging();
 
     ioc.Container.bindModules([ CoreComponentsModule() ]);
-    await componentHandler().run();
+    await componentHandler().upgrade();
 
     group('Checkbox', () {
         setUp(() { });

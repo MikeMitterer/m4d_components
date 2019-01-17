@@ -9,7 +9,7 @@ main() async {
     final Logger _logger = new Logger('mdl_tabs_sample.main');
 
     ioc.Container.bindModules([ CoreComponentsModule() ]);
-    await componentHandler().run();
+    await componentHandler().upgrade();
 
     configLogging();
 

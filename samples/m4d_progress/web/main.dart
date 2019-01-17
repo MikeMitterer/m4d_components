@@ -9,7 +9,7 @@ main() async {
     final Logger _logger = new Logger('example.progress.main');
 
     ioc.Container.bindModules([ CoreComponentsModule() ]);
-    await componentHandler().run();
+    await componentHandler().upgrade();
 
     _logger.info("All components upgraded");
 

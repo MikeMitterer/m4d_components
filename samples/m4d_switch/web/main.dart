@@ -5,7 +5,7 @@ import "package:m4d_components/m4d_components.dart";
 
 main() async {
     ioc.Container.bindModules([ CoreComponentsModule() ]);
-    await componentHandler().run();
+    await componentHandler().upgrade();
 
     final switch1 = MaterialSwitch.widget(dom.querySelector("#switch-1"));
     switch1.onClick.listen((_) {

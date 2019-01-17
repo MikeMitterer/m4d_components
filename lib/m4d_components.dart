@@ -103,7 +103,7 @@ class CoreComponentsModule extends ioc.Module {
   @override
   configure() {
     registerMdlComponents();
-    //componentHandler().run();
+    //componentHandler().upgrade();
   }
 
   @override

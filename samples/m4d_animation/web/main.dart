@@ -10,5 +10,5 @@ Future main() async {
     configLogging();
 
     ioc.Container.bindModules([ CoreComponentsModule(), AnimationDemoModule() ]);
-    await componentHandler().run();
+    await componentHandler().upgrade();
 }

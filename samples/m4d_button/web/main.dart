@@ -26,7 +26,7 @@ Future main() async {
     ioc.Container.bindModules([ CoreComponentsModule() ])
         .bind(service.Application).to(Application());
         
-    final Application app = await componentHandler().run<Application>();
+    final Application app = await componentHandler().upgrade<Application>();
     app.run();
 }
 

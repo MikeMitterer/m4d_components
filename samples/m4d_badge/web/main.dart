@@ -12,7 +12,7 @@ main() async {
     configLogging();
 
     ioc.Container.bindModules([ CoreComponentsModule() ]);
-    await componentHandler().run();
+    await componentHandler().upgrade();
 
     final MaterialBadge badge1 = MaterialBadge.widget(dom.querySelector("#el1"));
     int counter = 1;
