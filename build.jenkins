@@ -2,12 +2,22 @@ pipeline {
     agent {
         label 'linux'
     }
+
+    environment { SRC_CHANGED=true }
+
     stages {
         stage('Preparation') {
             steps {
                 timeout(time: 15, unit: 'MINUTES') {
                     ansiColor('xterm') {
                         sh 'pub update'
+
+                        script {
+                            // 0 - unchanged, 1 - changed
+                            // Script-Logik wird mit ! umgekehrt
+                            SRC_CHANGED = ! sh(script: "srcchanged.sh --check", returnStatus: true)
+                        }
+
                     }
                 }
 
@@ -31,6 +41,7 @@ pipeline {
         }
 
         stage('Deploy samples') {
+            when { expression { SRC_CHANGED } }
             steps {
                 timeout(time: 30, unit: 'MINUTES') {
                     ansiColor('xterm') {
@@ -44,4 +55,3 @@ pipeline {
         }
     }
 }
-                       
