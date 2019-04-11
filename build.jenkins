@@ -5,6 +5,10 @@ pipeline {
 
     environment { SRC_CHANGED=true }
 
+    parameters {
+        booleanParam(defaultValue: false, description: 'Publish samples to Demo-Server', name: 'PUBLISH_SAMPLES')
+    }
+
     stages {
         stage('Preparation') {
             steps {
@@ -41,7 +45,10 @@ pipeline {
         }
 
         stage('Deploy samples') {
-            when { expression { SRC_CHANGED } }
+            when { anyOf {
+                expression { SRC_CHANGED }
+                expression { params.PUBLISH_SAMPLES }}
+            }
             steps {
                 timeout(time: 30, unit: 'MINUTES') {
                     ansiColor('xterm') {
